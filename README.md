@@ -37,16 +37,16 @@ workspaces are open. The third step is what actually adds the meta-workspace
 functionality. The final step is just to change the default initial workspace
 name from "1", "2", etc. to "01", "02", ...
 
-1. In your i3 config, replace all your `bindsym $mod+[N] workspace [N]` with
+1) In your i3 config, replace all your `bindsym $mod+[N] workspace [N]` with
 `bindsym $mod+[N] exec i3metaws -w [N]`, where [N] is just the workspace number.
 
-2. Next, replace your `bindsym $mod+Shift+[N] move container to workspace [N]`
+2) Next, replace your `bindsym $mod+Shift+[N] move container to workspace [N]`
 with `bindsym $mod+Shift+[N] exec i3metaws -m [N]`.
 
-3. Now add `bindsym $mod+Control+[N] exec i3metaws -M [N]` for each
+3) Now add `bindsym $mod+Control+[N] exec i3metaws -M [N]` for each
 workspace N.
 
-4. Finally, we have to tell i3 to open on workspace '01' when we run `startx`
+4) Finally, we have to tell i3 to open on workspace '01' when we run `startx`
 instead of opening to just workspace '1' since i3metaws expects at least 2
 characters (one for the meta-workspace we're on and the other for the actual
 workspace). **Note: if you only have a single display, you won't need the
